@@ -1,0 +1,31 @@
+
+.hero {
+    position: relative; /* Asegura que el texto esté encima de la capa oscura */
+    z-index: 2;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  .cta-button {
+    background-color: #ffcc00;
+    color: #005d3b;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .cta-button:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+  }
