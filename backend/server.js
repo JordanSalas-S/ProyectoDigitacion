@@ -41,7 +41,7 @@ app.post('/register', (req, res) => {
 // Ruta para obtener los datos asociados a un centro de costo
 app.get('/centroCostoData/:id', (req, res) => {
     const centroCostoId = req.params.id;
-    const query = 'SELECT figura, variedad, especie FROM fbase WHERE centro_costo = ?'; // Cambio aquí: búsqueda por centro_costo en vez de id
+    const query = 'SELECT figura, variedad, especie FROM fbase WHERE centro_costo = ?'; //busqueda por centro_costo
     db.query(query, [centroCostoId], (err, result) => {
         if (err) {
             console.error('Error al obtener datos del centro de costo:', err);
@@ -60,7 +60,7 @@ app.get('/centroCostoData/:id', (req, res) => {
 // Ruta para obtener los datos asociados a un centro de costo (figura, variedad, especie)
 app.get('/centroCostoData/:id', (req, res) => {
     const centroCostoId = req.params.id;
-    const query = 'SELECT figura, variedad, especie FROM fbase WHERE id = ?'; // Ajusta el nombre de la columna 'id' si es necesario
+    const query = 'SELECT figura, variedad, especie FROM fbase WHERE id = ?';
     db.query(query, [centroCostoId], (err, result) => {
         if (err) {
             console.error('Error al obtener datos del centro de costo:', err);
@@ -102,8 +102,7 @@ app.post('/recepcion', (req, res) => {
         centroCosto, figura, variedad, especie, fecha, hora, tipo, codigo, nombres, cantidad, comentario
     } = req.body;
 
-    // Asegúrate de que el nombre esté disponible, si no lo enviamos de la base de datos
-    const nombreFinal = nombres || ""; // Si el nombre está vacío, lo dejaremos vacío por ahora
+    const nombreFinal = nombres || ""; // Si el nombre está vacío
 
     // Insertar los datos en la tabla 'recepcion'
     const query = `

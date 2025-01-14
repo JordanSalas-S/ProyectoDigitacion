@@ -80,7 +80,7 @@ const RecepcionForm = () => {
           console.log("Nombres recibido:", data);  // Verificar la respuesta del servidor
           setFormData((prevData) => ({
             ...prevData,
-            nombres: data.nombres || "",  // Aquí debes usar 'nombres' que es el campo correcto
+            nombres: data.nombres || "",
           }));
         })
         .catch((error) => {
